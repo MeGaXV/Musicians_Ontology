@@ -1,0 +1,28 @@
+{
+  "name": "Musicians_Ontology",
+  "version": "1.0.0",
+  "description": "Web ontology for Metallica (music band) connected to a JavaScript website.",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
+    "sparql-client-2": "^0.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mmeckawy/Musicians_Ontology.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mmeckawy/Musicians_Ontology/issues"
+  },
+  "homepage": "https://github.com/Mmeckawy/Musicians_Ontology#readme"
+}
