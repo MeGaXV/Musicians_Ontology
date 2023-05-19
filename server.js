@@ -15,15 +15,18 @@ app.get('/', (req, res) => {
       console.log(ontologyData);
 
       const defaultQuery = `
-      PREFIX owl: <http://www.w3.org/2002/07/owl#>
-      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-      PREFIX ont: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ont: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#>
 
-      SELECT ?band
-      WHERE {
-        ?band rdf:type ont:Band .
-      }
+SELECT ?person ?role
+WHERE {
+  ?person rdf:type ont:Person.
+  ont:Metallica ont:hasMember ?person.
+  ?person ont:hasRole ?role.
+}
       `;
 
       // SPARQL query
@@ -37,10 +40,19 @@ app.get('/', (req, res) => {
           console.error('SPARQL query error:', error);
           res.status(500).send('Internal Server Error');
         } else {
-          const bands = results.results.bindings.map(binding => binding.band.value);
-          console.log(bands);
+          const variables = results.head.vars;
+          const bindings = results.results.bindings;
+          const result = bindings.map(binding => {
+            const row = {};
+            for (const variable of variables) {
+              row[variable] = binding[variable].value;
+              }
+              return row;
+          })
+          console.log(result[0]);
+          //res.send(results);
 
-          const tableHtml = generateTableHtml(bands);
+          const tableHtml = generateTableHtml(result, variables);
 
           const html = `
           <html>
@@ -102,29 +114,48 @@ app.get('/', (req, res) => {
     });
 });
 
-function generateTableHtml(data) {
+function generateTableHtml(data, vars) {
   let tableHtml = '<table>';
 
-  // Generate table header
   tableHtml += '<thead>';
   tableHtml += '<tr>';
-  tableHtml += '<th>Band</th>';
+  for(const head of vars)
+  {
+    tableHtml += `<th>${head}</th>`;
+  }
   tableHtml += '</tr>';
-  tableHtml += '</thead>';
+    tableHtml += '</thead>';
+
 
   // Generate table body
   tableHtml += '<tbody>';
   for (const item of data) {
     tableHtml += '<tr>';
-    tableHtml += `<td>${item}</td>`;
+    for(const var1 of vars){
+    tableHtml += `<td>${item[var1]}</td>`;
+    }
     tableHtml += '</tr>';
   }
   tableHtml += '</tbody>';
 
   tableHtml += '</table>';
 
+  
+
   return tableHtml;
 }
+
+function extractKeyValuePairs(jsonData) {
+  const variables = jsonData.head.vars;
+  const bindings = jsonData.results.bindings;
+  const data = bindings.map(binding => {
+    const row = {};
+    for (const variable of variables) {
+      row[variable] = binding[variable].value;
+    }
+    return row;
+  });
+  }
 
 app.listen(8080, () => {
   console.log('Server started on port 8080');
