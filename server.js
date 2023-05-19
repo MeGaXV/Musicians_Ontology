@@ -143,17 +143,6 @@ function generateTableHtml(data, vars) {
   return tableHtml;
 }
 
-function extractKeyValuePairs(jsonData) {
-  const variables = jsonData.head.vars;
-  const bindings = jsonData.results.bindings;
-  const data = bindings.map(binding => {
-    const row = {};
-    for (const variable of variables) {
-      row[variable] = binding[variable].value;
-    }
-    return row;
-  });
-  }
 
 app.listen(8080, () => {
   console.log('Server started on port 8080');
