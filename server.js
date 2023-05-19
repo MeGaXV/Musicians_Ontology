@@ -49,8 +49,6 @@ WHERE {
               }
               return row;
           })
-          console.log(result[0]);
-          //res.send(results);
 
           const tableHtml = generateTableHtml(result, variables);
 
