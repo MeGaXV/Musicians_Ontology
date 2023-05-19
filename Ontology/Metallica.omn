@@ -1,0 +1,239 @@
+Prefix: : <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4>
+
+
+AnnotationProperty: rdfs:label
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum>
+
+    Annotations: 
+        rdfs:label "Has Album"
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+    
+    Range: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>
+
+    Annotations: 
+        rdfs:label "Has Member"
+    
+    SubPropertyOf: 
+        owl:topObjectProperty
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+    
+    Range: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+DataProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>
+
+    Annotations: 
+        rdfs:label "Has Role"
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>,
+        (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> value "Bassist") or (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> value "Drummer") or (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> value "Lead Guitarist") or (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> value "Rythm Guitarist") or (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> value "Vocalist")
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>
+
+    Annotations: 
+        rdfs:label "Has Song"
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn>
+
+    Annotations: 
+        rdfs:label "Place Formed In"
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn>
+
+    Annotations: 
+        rdfs:label "Time Formed In"
+    
+    Domain: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+    
+    Range: 
+        xsd:int
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: owl:topDataProperty
+
+    
+Class: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> min 1 <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>,
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> min 2 <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    
+Class: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+
+    
+Class: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All>
+
+    Annotations: 
+        rdfs:label "And Justice For All"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "Blackened",
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "One"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield>
+
+    Annotations: 
+        rdfs:label "James Hetfield"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>  "Rythm Guitarist",
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>  "Vocalist"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett>
+
+    Annotations: 
+        rdfs:label "Kirk Hammett"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>  "Lead Guitarist"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich>
+
+    Annotations: 
+        rdfs:label "Lars Ulrich"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>  "Drummer"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets>
+
+    Annotations: 
+        rdfs:label "Master Of Puppets"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "Disposable Heroes",
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "Orion"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica>
+
+    Annotations: 
+        rdfs:label "Metallica"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>  <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield>,
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>  <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett>,
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>  <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich>,
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>  <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo>,
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn>  "Los Angeles",
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn>  "1981"^^xsd:int
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning>
+
+    Annotations: 
+        rdfs:label "Ride The Lightning"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "For Whom The Bell Tolls",
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>  "Ride The Lightning"
+    
+    
+Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo>
+
+    Annotations: 
+        rdfs:label "Robert Trujillo"
+    
+    Types: 
+        <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>
+    
+    Facts:  
+     <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>  "Bassist"
+    
+    

@@ -1,0 +1,185 @@
+@prefix : <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4> .
+
+<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum
+:hasAlbum rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Band ;
+          rdfs:range :MusicAlbum ;
+          rdfs:label "Has Album" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Band ;
+           rdfs:range :Person ;
+           rdfs:label "Has Member" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole
+:hasRole rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Person ,
+                     [ rdf:type owl:Class ;
+                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRole ;
+                                       owl:hasValue "Bassist"
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRole ;
+                                       owl:hasValue "Drummer"
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRole ;
+                                       owl:hasValue "Lead Guitarist"
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRole ;
+                                       owl:hasValue "Rythm Guitarist"
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRole ;
+                                       owl:hasValue "Vocalist"
+                                     ]
+                                   )
+                     ] ;
+         rdfs:range xsd:string ;
+         rdfs:label "Has Role" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong
+:hasSong rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :MusicAlbum ;
+         rdfs:range xsd:string ;
+         rdfs:label "Has Song" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn
+:placeFormedIn rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Band ;
+               rdfs:range xsd:string ;
+               rdfs:label "Place Formed In" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn
+:timeFormedIn rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Band ;
+              rdfs:range xsd:int ;
+              rdfs:label "Time Formed In" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band
+:Band rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasAlbum ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :MusicAlbum
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasMember ;
+                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Person
+                      ] .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum
+:MusicAlbum rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person
+:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All
+:And_Justice_For_All rdf:type owl:NamedIndividual ,
+                              :MusicAlbum ;
+                     :hasSong "Blackened" ,
+                              "One" ;
+                     rdfs:label "And Justice For All" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield
+:James_Hetfield rdf:type owl:NamedIndividual ,
+                         :Person ;
+                :hasRole "Rythm Guitarist" ,
+                         "Vocalist" ;
+                rdfs:label "James Hetfield" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett
+:Kirk_Hammett rdf:type owl:NamedIndividual ,
+                       :Person ;
+              :hasRole "Lead Guitarist" ;
+              rdfs:label "Kirk Hammett" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich
+:Lars_Ulrich rdf:type owl:NamedIndividual ,
+                      :Person ;
+             :hasRole "Drummer" ;
+             rdfs:label "Lars Ulrich" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets
+:Master_Of_Puppets rdf:type owl:NamedIndividual ,
+                            :MusicAlbum ;
+                   :hasSong "Disposable Heroes" ,
+                            "Orion" ;
+                   rdfs:label "Master Of Puppets" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica
+:Metallica rdf:type owl:NamedIndividual ,
+                    :Band ;
+           :hasMember :James_Hetfield ,
+                      :Kirk_Hammett ,
+                      :Lars_Ulrich ,
+                      :Robert_Trujillo ;
+           :placeFormedIn "Los Angeles" ;
+           :timeFormedIn "1981"^^xsd:int ;
+           rdfs:label "Metallica" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning
+:Ride_The_Lightning rdf:type owl:NamedIndividual ,
+                             :MusicAlbum ;
+                    :hasSong "For Whom The Bell Tolls" ,
+                             "Ride The Lightning" ;
+                    rdfs:label "Ride The Lightning" .
+
+
+###  http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo
+:Robert_Trujillo rdf:type owl:NamedIndividual ,
+                          :Person ;
+                 :hasRole "Bassist" ;
+                 rdfs:label "Robert Trujillo" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

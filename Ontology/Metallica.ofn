@@ -1,0 +1,155 @@
+Prefix(:=<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4>
+
+Declaration(Class(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>))
+Declaration(Class(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>))
+Declaration(Class(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember>))
+Declaration(DataProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole>))
+Declaration(DataProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong>))
+Declaration(DataProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn>))
+Declaration(DataProperty(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> (Has Album)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> "Has Album")
+SubObjectPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>)
+ObjectPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>)
+
+# Object Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> (Has Member)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> "Has Member")
+SubObjectPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>)
+ObjectPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> (Has Role)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Has Role")
+SubDataPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> owl:topDataProperty)
+DataPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>)
+DataPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> ObjectUnionOf(DataHasValue(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Bassist") DataHasValue(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Drummer") DataHasValue(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Lead Guitarist") DataHasValue(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Rythm Guitarist") DataHasValue(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> "Vocalist")))
+DataPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> (Has Song)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> "Has Song")
+SubDataPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> owl:topDataProperty)
+DataPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>)
+DataPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> (Place Formed In)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> "Place Formed In")
+SubDataPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> owl:topDataProperty)
+DataPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>)
+DataPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> (Time Formed In)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> "Time Formed In")
+SubDataPropertyOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> owl:topDataProperty)
+DataPropertyDomain(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>)
+DataPropertyRange(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> xsd:int)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band> (<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band>)
+
+SubClassOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band> ObjectMinCardinality(1 <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum>))
+SubClassOf(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band> ObjectMinCardinality(2 <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person>))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All> (And Justice For All)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All> "And Justice For All")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All> "Blackened")
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All> "One")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield> (James Hetfield)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield> "James Hetfield")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield> "Rythm Guitarist")
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield> "Vocalist")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett> (Kirk Hammett)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett> "Kirk Hammett")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett> "Lead Guitarist")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich> (Lars Ulrich)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich> "Lars Ulrich")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich> "Drummer")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets> (Master Of Puppets)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets> "Master Of Puppets")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets> "Disposable Heroes")
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets> "Orion")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> (Metallica)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> "Metallica")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasMember> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#placeFormedIn> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> "Los Angeles")
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#timeFormedIn> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica> "1981"^^xsd:int)
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning> (Ride The Lightning)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning> "Ride The Lightning")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning> "For Whom The Bell Tolls")
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasSong> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning> "Ride The Lightning")
+
+# Individual: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo> (Robert Trujillo)
+
+AnnotationAssertion(rdfs:label <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo> "Robert Trujillo")
+ClassAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo>)
+DataPropertyAssertion(<http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#hasRole> <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo> "Bassist")
+
+
+)
