@@ -28,6 +28,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
+        <rdfs:label>Has Album</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -38,6 +39,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
+        <rdfs:label>Has Member</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -85,6 +87,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Has Role</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -95,18 +98,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#label -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#label">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Has Song</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -117,6 +109,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Place Formed In</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -127,6 +120,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>Time Formed In</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -192,7 +186,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
         <untitled-ontology-4:hasSong>Blackened</untitled-ontology-4:hasSong>
         <untitled-ontology-4:hasSong>One</untitled-ontology-4:hasSong>
-        <untitled-ontology-4:label>And Justice For All</untitled-ontology-4:label>
+        <rdfs:label>And Justice For All</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -203,7 +197,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
         <untitled-ontology-4:hasRole>Rythm Guitarist</untitled-ontology-4:hasRole>
         <untitled-ontology-4:hasRole>Vocalist</untitled-ontology-4:hasRole>
-        <untitled-ontology-4:label>James Hetfield</untitled-ontology-4:label>
+        <rdfs:label>James Hetfield</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -213,7 +207,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett">
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
         <untitled-ontology-4:hasRole>Lead Guitarist</untitled-ontology-4:hasRole>
-        <untitled-ontology-4:label>Kirk Hammett</untitled-ontology-4:label>
+        <rdfs:label>Kirk Hammett</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -223,7 +217,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich">
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
         <untitled-ontology-4:hasRole>Drummer</untitled-ontology-4:hasRole>
-        <untitled-ontology-4:label>Lars Ulrich</untitled-ontology-4:label>
+        <rdfs:label>Lars Ulrich</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -234,7 +228,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
         <untitled-ontology-4:hasSong>Disposable Heroes</untitled-ontology-4:hasSong>
         <untitled-ontology-4:hasSong>Orion</untitled-ontology-4:hasSong>
-        <untitled-ontology-4:label>Master Of Puppets</untitled-ontology-4:label>
+        <rdfs:label>Master Of Puppets</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -243,13 +237,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Metallica">
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Band"/>
+        <untitled-ontology-4:hasAlbum rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#And_Justice_For_All"/>
+        <untitled-ontology-4:hasAlbum rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Master_Of_Puppets"/>
+        <untitled-ontology-4:hasAlbum rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Ride_The_Lightning"/>
         <untitled-ontology-4:hasMember rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#James_Hetfield"/>
         <untitled-ontology-4:hasMember rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Kirk_Hammett"/>
         <untitled-ontology-4:hasMember rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Lars_Ulrich"/>
         <untitled-ontology-4:hasMember rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo"/>
-        <untitled-ontology-4:label>Metallica</untitled-ontology-4:label>
         <untitled-ontology-4:placeFormedIn>Los Angeles</untitled-ontology-4:placeFormedIn>
         <untitled-ontology-4:timeFormedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1981</untitled-ontology-4:timeFormedIn>
+        <rdfs:label>Metallica</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -260,7 +257,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#MusicAlbum"/>
         <untitled-ontology-4:hasSong>For Whom The Bell Tolls</untitled-ontology-4:hasSong>
         <untitled-ontology-4:hasSong>Ride The Lightning</untitled-ontology-4:hasSong>
-        <untitled-ontology-4:label>Ride The Lightning</untitled-ontology-4:label>
+        <rdfs:label>Ride The Lightning</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -270,7 +267,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Robert_Trujillo">
         <rdf:type rdf:resource="http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#Person"/>
         <untitled-ontology-4:hasRole>Bassist</untitled-ontology-4:hasRole>
-        <untitled-ontology-4:label>Robert Trujillo</untitled-ontology-4:label>
+        <rdfs:label>Robert Trujillo</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 

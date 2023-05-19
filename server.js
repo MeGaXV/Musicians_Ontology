@@ -3,6 +3,7 @@ const axios = require('axios');
 const SparqlClient = require('sparql-client-2');
 
 const app = express();
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const ontologyUrl = 'http://localhost/ontology/musicians.rdf';
@@ -16,17 +17,17 @@ app.get('/', (req, res) => {
 
       const defaultQuery = `
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ont: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX ont: <http://www.semanticweb.org/khale/ontologies/2023/4/untitled-ontology-4#>
 
-SELECT ?person ?role
-WHERE {
-  ?person rdf:type ont:Person.
-  ont:Metallica ont:hasMember ?person.
-  ?person ont:hasRole ?role.
-}
+     SELECT ?person ?role
+     WHERE {
+      ?person rdf:type ont:Person.
+      ont:Metallica ont:hasMember ?person.
+      ?person ont:hasRole ?role.
+    }
       `;
 
       // SPARQL query
@@ -63,17 +64,23 @@ WHERE {
                   width: 100%;
                 }
                 th, td {
-                  border: 1px solid black;
+                  border: 1px solid white;
                   padding: 8px;
                 }
                 th {
-                  background-color: #f2f2f2;
+                  background-color: black;
+                  color: white;
+                }
+                td{
+                  color: white;
+                  -webkit-text-stroke: 0.2px black;
                 }
                 .grey-row {
                   background-color: grey;
                   color: white;
                 }
                 h1 {
+                  color: white;
                   text-align: center;
                 }
                 input{
@@ -81,9 +88,19 @@ WHERE {
                 }
                 textarea{
                   width: 100%;
+                  background-color: black;
+                  color: white;
                 }
                 .center-button {
                   text-align: center;
+                }
+                body {
+                  background-image: url("/background.jpg");
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                }
+                label {
+                  color: white;
                 }
               </style>
             </head>
@@ -101,7 +118,6 @@ WHERE {
             </body>
           </html>
           `;
-
           res.send(html);
         }
       });
